@@ -23,11 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\ProfilePage\" />
     <Folder Include="Screenshots\" />
-    <Folder Include="Pages\" />
-    <Folder Include="SpecFlow\StepFeature\" />
-    <Folder Include="SpecFlow\StepDefinition\" />
-    <Folder Include="Utils\" />
+    <Folder Include="SpecFlow\StepDefinition\ProfilePage\" />
+    <Folder Include="SpecFlow\StepFeature\ProfilePage\" />
   </ItemGroup>
 
 </Project>
