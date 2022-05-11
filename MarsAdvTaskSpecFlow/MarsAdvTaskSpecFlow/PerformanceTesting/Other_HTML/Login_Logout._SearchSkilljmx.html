@@ -1,0 +1,1230 @@
+<html xmlns:jmeter="http://jmeter.apache.org/">
+   <title>Schematic view of Test Plan</title>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style>
+ul.tree, ul.tree ul {
+    list-style-type: none;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAKAQMAAABPHKYJAAAAA1BMVEWIiIhYZW6zAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1ggGExMZBky19AAAAAtJREFUCNdjYMAEAAAUAAHlhrBKAAAAAElFTkSuQmCC') repeat-y;
+    margin: 0;
+    padding: 0;
+}
+ul.tree ul {
+    margin-left: 10px;
+}
+ul.tree li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUAQMAAACK1e4oAAAABlBMVEUAAwCIiIgd2JB2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9YIBhQIJYVaFGwAAAARSURBVAjXY2hgQIf/GTDFGgDSkwqATqpCHAAAAABJRU5ErkJggg==') no-repeat;
+    color: #369;
+}
+ul.tree li:last-child {
+    background: #fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUAQMAAACK1e4oAAAABlBMVEUAAwCIiIgd2JB2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9YIBhQIIhs+gc8AAAAQSURBVAjXY2hgQIf/GbAAAKCTBYBUjWvCAAAAAElFTkSuQmCC') no-repeat;
+}
+</style>
+   </head>
+   <body>
+      <ul class="tree" id="tree">
+         <li><b>load test </b>
+            "Login_Logout_SearchSkill_Test" 
+            (globalVars:[],
+            executeTearDownThreadsOnShutdown: true)
+            <br>
+            &nbsp;&nbsp;&nbsp;Comments: <i style="color:green"></i></li>
+         <li>
+            <ul>
+               <li><b>add headers</b>
+                  "HTTP Header Manager" 
+                  (headers:[
+                  
+                  {"sec-ch-ua"=
+                  "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                  ,
+                  {"User-Agent"=
+                  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                  Safari/537.36"
+                  ,
+                  {"ContentType"=
+                  "application/json"
+                  ,
+                  {"Authorization"=
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTc4MDQ4ZGNlMWQ2MjAwMDEwNzA0MzQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYwOTY4IiwiaWF0IjoxNjQ3NzUyODYyLCJleHAiOjE2NDc3NTY0NjIsInVuaXF1ZV9uYW1lIjoiNjE3ODA0OGRjZTFkNjIwMDAxMDcwNDM0In0.06xvE5qB2aFPzn7r3Ld-6aJCXEbHADrGrRPw0u8Mx8o"
+                  ])
+                  </li>
+               <li><b>globalVars</b>
+                  "User Defined Variables" 
+                  ([
+                  "BaseUrl"
+                  =
+                  "localhost"
+                  ])
+                  </li>
+               <li><b>http defaults</b>
+                  "HTTP Request Defaults" 
+                  (protocol: "",
+                  domain: "",
+                  port: "",
+                  path: "",
+                  connectTimeout: ""ms,
+                  responseTimeout: ""ms
+                  )
+                  </li>
+               <li><b>DNSCacheManager</b>
+                  "DNS Cache Manager" </li>
+               <li><b>AuthManager</b>
+                  "HTTP Authorization Manager" </li>
+               <li><b>handle cookies</b>
+                  "HTTP Cookie Manager" 
+                  (clearOnEachIteration: true,
+                  policy: "",
+                  cookies: [
+                  ])
+                  </li>
+               <li><b>simulate browser cache</b>
+                  "HTTP Cache Manager" 
+                  (clearOnEachIteration: true,
+                  useCacheControlAndExpires: false,
+                  maxSize: 
+                  )
+                  </li>
+               <li><b>run</b>
+                  "Load Testing" 
+                  (
+                  threads: "1",
+                  loops: "1",
+                  ramp-up: "1"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><a id="Load Testing Controller"><b>transaction</b></a>
+                        "Load Testing Controller" </li>
+                     <li>
+                        <ul>
+                           <li><b>http request</b>
+                              "HomePage - http://localhost:5000/Home" 
+                              (method: "GET",
+                              url: "
+                              http://localhost:5000//Home",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "LoginPage" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "jlfuturistictech@hotmail.com"
+                              ,
+                              "Password"=
+                              "JialeQA2021"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                                 <li><b>think-time Uniform</b>
+                                    "Uniform Random Timer" 
+                                    (const:0ms,
+                                    variation:0.0ms)
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;Comments: <i style="color:green">Recorded time was 0 milliseconds</i></li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Input Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              "Search skills"=
+                              "Automation Testing"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Get Categories - http://localhost:51689/listing/listing/getCategories" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:51689//listing/listing/getCategories",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Authorization"=
+                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTc4MDQ4ZGNlMWQ2MjAwMDEwNzA0MzQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYwOTY4IiwiaWF0IjoxNjQ3Njc4MjkxLCJleHAiOjE2NDc2ODE4OTEsInVuaXF1ZV9uYW1lIjoiNjE3ODA0OGRjZTFkNjIwMDAxMDcwNDM0In0.aGxEa3p2o98XsiYi41rsVHW1LnM0UhqqoZBK-nPZ1dU"
+                                    ,
+                                    {"Content-Type"=
+                                    "application/json; charset=utf-8"
+                                    ,
+                                    {"Accept"=
+                                    "*/*"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Skills - http://localhost:5000/Home/Search?searchString=Automation%20Tester" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?searchString=Automation%20Tester",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74
+                                    Safari/537.36"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Category - http://localhost:5000/Home/Search?cat=ProgrammingTech&amp;subcat=4" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?cat=ProgrammingTech&amp;subcat=4",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search SubCategory - http://localhost:5000/Home/ServiceDetail?id=622ccd66b082c200015becfa" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Home/ServiceDetail?id=622ccd66b082c200015becfa",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "jlfuturistictech@hotmail.com"
+                              ,
+                              "Password"=
+                              "JialeQA2021"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>assert as</b>
+                              "Response Assertion" <b> that (response_code)</b><b>
+                                 contains
+                                 </b>
+                              [
+                              
+                              "200"
+                              
+                              ])
+                              </li>
+                           <li><b>write samples</b>
+                              "Aggregate Graph" </li>
+                           <li><b>write samples</b>
+                              "View Results Tree" </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><b>run</b>
+                  "Loop Controller" 
+                  (
+                  threads: "1",
+                  loops: "1",
+                  ramp-up: "1"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><b>LoopController</b>
+                        "Loop Controller" </li>
+                     <li>
+                        <ul>
+                           <li><b>http request</b>
+                              "HomePage - http://localhost:5000/Home" 
+                              (method: "GET",
+                              url: "
+                              http://localhost:5000//Home",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>assert as</b>
+                                    "Response Assertion" <b> that (response_code)</b><b>
+                                       contains
+                                       </b>
+                                    [
+                                    
+                                    "200"
+                                    
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "LoginPage" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "${email}"
+                              ,
+                              "Password"=
+                              "${password}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "application/json, text/javascript, */*; q=0.01"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ])
+                                    </li>
+                                 <li><b>think-time Uniform</b>
+                                    "Uniform Random Timer" 
+                                    (const:0ms,
+                                    variation:0.0ms)
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;Comments: <i style="color:green">Recorded time was 0 milliseconds</i></li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Input Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              "Search skills"=
+                              "Automation Testing"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Skills - http://localhost:5000/Home/Search?searchString=Automation%20Tester" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?searchString=Automation%20Tester",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74
+                                    Safari/537.36"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Category - http://localhost:5000/Home/Search?cat=ProgrammingTech&amp;subcat=4" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?cat=ProgrammingTech&amp;subcat=4",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search SubCategory - http://localhost:5000/Home/ServiceDetail?id=622ccd66b082c200015becfa" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Home/ServiceDetail?id=622ccd66b082c200015becfa",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "jlfuturistictech@hotmail.com"
+                              ,
+                              "Password"=
+                              "JialeQA2021"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>write samples</b>
+                              "Aggregate Graph" </li>
+                           <li><b>write samples</b>
+                              "View Results in Table" </li>
+                           <li><b>write samples</b>
+                              "View Results Tree" </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><b>run</b>
+                  "CSV Data Set Config" 
+                  (
+                  threads: "1",
+                  loops: "1",
+                  ramp-up: "1"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><a id="CSV Data Set Config Controller"><b>transaction</b></a>
+                        "CSV Data Set Config Controller" </li>
+                     <li>
+                        <ul>
+                           <li><b>http request</b>
+                              "HomePage - http://localhost:5000/Home" 
+                              (method: "GET",
+                              url: "
+                              http://localhost:5000//Home",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "LoginPage" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "${email}"
+                              ,
+                              "Password"=
+                              "${password}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                                 <li><b>think-time Uniform</b>
+                                    "Uniform Random Timer" 
+                                    (const:0ms,
+                                    variation:0.0ms)
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;Comments: <i style="color:green">Recorded time was 0 milliseconds</i></li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Input Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              "Search skills"=
+                              "${Search}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Get Categories - http://localhost:51689/listing/listing/getCategories" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:51689//listing/listing/getCategories",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Authorization"=
+                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTc4MDQ4ZGNlMWQ2MjAwMDEwNzA0MzQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYwOTY4IiwiaWF0IjoxNjQ3Njc4MjkxLCJleHAiOjE2NDc2ODE4OTEsInVuaXF1ZV9uYW1lIjoiNjE3ODA0OGRjZTFkNjIwMDAxMDcwNDM0In0.aGxEa3p2o98XsiYi41rsVHW1LnM0UhqqoZBK-nPZ1dU"
+                                    ,
+                                    {"Content-Type"=
+                                    "application/json; charset=utf-8"
+                                    ,
+                                    {"Accept"=
+                                    "*/*"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Skills - http://localhost:5000/Home/Search?searchString=Automation%20Tester" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?searchString=Automation%20Tester",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74
+                                    Safari/537.36"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Category - http://localhost:5000/Home/Search?cat=ProgrammingTech&amp;subcat=4" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?cat=ProgrammingTech&amp;subcat=4",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search SubCategory - http://localhost:5000/Home/ServiceDetail?id=622ccd66b082c200015becfa" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Home/ServiceDetail?id=622ccd66b082c200015becfa",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "${email}"
+                              ,
+                              "Password"=
+                              "${password}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>write samples</b>
+                              "Summary Report" </li>
+                           <li><b>write samples</b>
+                              "View Results Tree" </li>
+                           <li><b>read csv into vars</b>
+                              "CSV Data Set Config" 
+                              (file: "D:/My documents/IC_TIPP_Test_Analyst_Programme/Internship Programme/MVP Studio Internship
+                              Tasks/Sprint 3 Adv Tasks/Mars QA Advanced Task/Other References/Performance_Testing/LoginData.csv",
+                              vars:"Email,Password",
+                              sharing:"shareMode.all",
+                              recycleOnEof:true,
+                              stopThreadOnEof:false
+                              )
+                              <br></li>
+                           <li><b>read csv into vars</b>
+                              "CSV Data Set Config" 
+                              (file: "D:/My documents/IC_TIPP_Test_Analyst_Programme/Internship Programme/MVP Studio Internship
+                              Tasks/Sprint 3 Adv Tasks/Mars QA Advanced Task/Other References/Performance_Testing/SearchSkill.csv",
+                              vars:"Url,Email,Password,Search",
+                              sharing:"shareMode.all",
+                              recycleOnEof:true,
+                              stopThreadOnEof:false
+                              )
+                              <br></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><b>run</b>
+                  "Timers_Listerners_Assertions" 
+                  (
+                  threads: "1",
+                  loops: "1",
+                  ramp-up: "1"
+                  )
+                  </li>
+               <li>
+                  <ul>
+                     <li><a id="Timers_Listerners_Assertions Controller"><b>transaction</b></a>
+                        "Timers_Listerners_Assertions Controller" </li>
+                     <li>
+                        <ul>
+                           <li><b>http request</b>
+                              "HomePage - http://localhost:5000/Home" 
+                              (method: "GET",
+                              url: "
+                              http://localhost:5000//Home",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "LoginPage" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "${email}"
+                              ,
+                              "Password"=
+                              "${password}"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li><b>http request</b>
+                              "Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Input Account Profile - http://localhost:5000/Account/Profile" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Account/Profile",
+                              
+                              body: [
+                              
+                              "Search skills"=
+                              "Automation Testing"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100""
+                                    ,
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Get Categories - http://localhost:51689/listing/listing/getCategories" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:51689//listing/listing/getCategories",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Authorization"=
+                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTc4MDQ4ZGNlMWQ2MjAwMDEwNzA0MzQiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjYwOTY4IiwiaWF0IjoxNjQ3Njc4MjkxLCJleHAiOjE2NDc2ODE4OTEsInVuaXF1ZV9uYW1lIjoiNjE3ODA0OGRjZTFkNjIwMDAxMDcwNDM0In0.aGxEa3p2o98XsiYi41rsVHW1LnM0UhqqoZBK-nPZ1dU"
+                                    ,
+                                    {"Content-Type"=
+                                    "application/json; charset=utf-8"
+                                    ,
+                                    {"Accept"=
+                                    "*/*"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Skills - http://localhost:5000/Home/Search?searchString=Automation%20Tester" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?searchString=Automation%20Tester",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74
+                                    Safari/537.36"
+                                    ,
+                                    {"Upgrade-Insecure-Requests"=
+                                    "1"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search Category - http://localhost:5000/Home/Search?cat=ProgrammingTech&amp;subcat=4" 
+                              (method: "GET",
+                              url: "
+                              http://${BaseUrl}:5000//Home/Search?cat=ProgrammingTech&amp;subcat=4",
+                              
+                              body: [
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>http request</b>
+                              "Search SubCategory - http://localhost:5000/Home/ServiceDetail?id=622ccd66b082c200015becfa" 
+                              (method: "POST",
+                              url: "
+                              http://${BaseUrl}:5000//Home/ServiceDetail?id=622ccd66b082c200015becfa",
+                              
+                              body: [
+                              
+                              "Email"=
+                              "jlfuturistictech@hotmail.com"
+                              ,
+                              "Password"=
+                              "JialeQA2021"
+                              
+                              ]
+                              ,
+                              upload-files: [
+                              
+                              ]
+                              )
+                              </li>
+                           <li>
+                              <ul>
+                                 <li><b>add headers</b>
+                                    "HTTP Header Manager" 
+                                    (headers:[
+                                    
+                                    {"Accept"=
+                                    "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+                                    ,
+                                    {"sec-ch-ua"=
+                                    "" Not;A Brand";v="99", "Google Chrome";v="99", "Chromium";v="99""
+                                    ,
+                                    {"User-Agent"=
+                                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114
+                                    Safari/537.36"
+                                    ])
+                                    </li>
+                              </ul>
+                           </li>
+                           <li><b>think-time Uniform</b>
+                              "Uniform Random Timer" 
+                              (const:0ms,
+                              variation:0.0ms)
+                              <br>
+                              &nbsp;&nbsp;&nbsp;Comments: <i style="color:green">Recorded time was 0 milliseconds</i></li>
+                           <li><b>think-time Constant</b>
+                              "Constant Timer" 
+                              (const:5000ms)
+                              </li>
+                           <li><b>assert as</b>
+                              "Response Assertion" <b> that (response_code)</b><b>
+                                 contains
+                                 </b>
+                              [
+                              
+                              "200"
+                              
+                              ])
+                              </li>
+                           <li><b>think-time Constant</b>
+                              "Constant Timer" <del>(disabled)</del>&nbsp;
+                              
+                              (const:300ms)
+                              </li>
+                           <li><b>HTMLAssertion</b>
+                              "HTML Assertion" </li>
+                           <li><b>SizeAssertion</b>
+                              "Size Assertion" </li>
+                           <li><b>DurationAssertion</b>
+                              "Duration Assertion" </li>
+                           <li><b>write samples</b>
+                              "Assertion Results" </li>
+                           <li><b>write samples</b>
+                              "Aggregate Graph" </li>
+                           <li><b>write samples</b>
+                              "View Results in Table" </li>
+                           <li><b>write samples</b>
+                              "View Results Tree" </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </body>
+</html>
