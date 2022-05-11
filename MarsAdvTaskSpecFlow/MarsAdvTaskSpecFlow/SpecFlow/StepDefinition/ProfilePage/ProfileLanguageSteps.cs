@@ -39,7 +39,7 @@ namespace MarsAdvTaskSpecFlow.SpecFlow.StepFeature.ProfilePage
         public void ThenTheNewRowShouldBeAddedAsSuccessfully(string Message)
         {
             // Assertion that popup message record has been displayed.
-            Assert.AreEqual(profileLanguageObj.GetNotification(testDriver), Message, "English has been added to your languages");
+            Assert.AreEqual(profileLanguageObj.GetNotification(testDriver), Message, "Japanese has been added to your languages");
         }
 
         [Given(@"I click on Edit of pen icon under Languages tab")]

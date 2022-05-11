@@ -14,8 +14,8 @@ namespace MarsAdvTaskSpecFlow.Utils
         //ExtentReportsPath
         //public static string ReportsPath = "@/MarsAdvTaskSpecFlow/TestReports/Reports";
         public static string ReportsPath = Directory.GetParent(@"@/MarsAdvTaskSpecFlow/TestReports/Reports").FullName
-            + Path.DirectorySeparatorChar + "Screenshot"
-            + Path.DirectorySeparatorChar + "Screenshot_" + DateTime.Now.ToString("ddMMyyyy HHmmss")
+            + Path.DirectorySeparatorChar + "Report"
+            + Path.DirectorySeparatorChar + "Report_" + DateTime.Now.ToString("ddMMyyyy HHmmss")
             + Path.DirectorySeparatorChar;
 
         //ReportXML Path
