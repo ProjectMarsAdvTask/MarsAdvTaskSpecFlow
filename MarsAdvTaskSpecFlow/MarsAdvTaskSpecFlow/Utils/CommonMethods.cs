@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AventStack.ExtentReports;
+using OpenQA.Selenium;
 using System;
 using System.Text;
 
@@ -10,8 +11,10 @@ namespace MarsAdvTaskSpecFlow.Utils
         //Screenshot
         public class SaveScreenShotClass
         {
-            public static string SaveScreenshot(IWebDriver driver, string folderLocation, string ScreenShotFileName) // Definition
+            public static string SaveScreenshot(IWebDriver driver, string ScreenShotFileName) // Definition
             {
+                var folderLocation = (ConstantHelpers.ScreenshotPath);
+
                 if (!System.IO.Directory.Exists(folderLocation))
                 {
                     System.IO.Directory.CreateDirectory(folderLocation);

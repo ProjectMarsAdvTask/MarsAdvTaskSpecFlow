@@ -10,6 +10,8 @@ namespace MarsAdvTaskSpecFlow.Utils
     [Binding]
     class Hooks : Steps
     {
+        //private IWebDriver testDriver;
+
         // ExtentReports
         private static ExtentTest featureName;
         private static ExtentTest scenario;
@@ -52,16 +54,17 @@ namespace MarsAdvTaskSpecFlow.Utils
         [Obsolete]
         public static void Setup()
         {
-            //CommonDriver.Initialize();
+            // CommonDriver.Initialize();
             // Create dynamic scenario name
             scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
         }
 
         [AfterScenario]
-        public static void AfterScenario(ScenarioContext context)
+        //[AfterTestRun]
+        public static void CloseTestRun(ScenarioContext context)
         {
             // Screenshot
-            string img = SaveScreenShotClass.SaveScreenshot(CommonDriver.testDriver, ConstantHelpers.ReportsPath, context.ScenarioInfo.Title);
+            string img = SaveScreenShotClass.SaveScreenshot(CommonDriver.testDriver, context.ScenarioInfo.Title);
             featureName.Log(Status.Info, "Snapshot below: " + featureName.AddScreenCaptureFromPath(img));
         }
     }
