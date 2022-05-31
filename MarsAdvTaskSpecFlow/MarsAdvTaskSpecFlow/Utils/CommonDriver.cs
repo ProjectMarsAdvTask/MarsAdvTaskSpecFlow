@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 
 namespace MarsAdvTaskSpecFlow.Utils
 {
-    class CommonDriver
+    public class CommonDriver
     {
         public static IWebDriver testDriver;
 

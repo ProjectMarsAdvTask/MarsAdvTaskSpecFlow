@@ -348,3 +348,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/MarsAdvTaskSpecFlow/MarsAdvTaskSpecFlow/PerformanceTesting/Load_Testing/HTML_Report/sbadmin2-1.0.7/bower_components

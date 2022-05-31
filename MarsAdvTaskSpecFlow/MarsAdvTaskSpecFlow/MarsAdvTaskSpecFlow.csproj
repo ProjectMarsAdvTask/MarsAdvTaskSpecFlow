@@ -9,24 +9,22 @@
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="ExtentReports" Version="4.1.0" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
-    <PackageReference Include="Selenium.Support" Version="4.1.0" />
-    <PackageReference Include="Selenium.WebDriver" Version="4.1.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="100.0.4896.6000" />
-    <PackageReference Include="SpecFlow" Version="3.9.58" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.9.58" />
+    <PackageReference Include="Selenium.Support" Version="4.1.1" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.1.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="101.0.4951.4100" />
+    <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
-    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.58" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\ProfilePage\" />
-    <Folder Include="Screenshots\" />
-    <Folder Include="SpecFlow\StepDefinition\ProfilePage\" />
-    <Folder Include="SpecFlow\StepFeature\ProfilePage\" />
+    <Folder Include="PerformanceTest\" />
+    <Folder Include="ImageAndReports\" />
   </ItemGroup>
 
 </Project>
